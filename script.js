@@ -1,14 +1,312 @@
 /* ========================================
-   Hero Canvas Animation
+   Video Modal Functions
    ======================================== */
 
-// Canvas animation disabled - using CSS gradient instead
-function initHeroCanvas() {
-  // Removed - using CSS background gradient for better performance
+function openVideoModal(videoId) {
+  const modal = document.getElementById("videoModal");
+  const videoFrame = document.getElementById("videoFrame");
+
+  // Set TikTok embed URL
+  videoFrame.src = `https://www.tiktok.com/embed/v2/${videoId}`;
+
+  // Show modal
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden"; // Prevent scrolling
 }
 
-// Init on page load
-document.addEventListener("DOMContentLoaded", initHeroCanvas);
+function closeVideoModal() {
+  const modal = document.getElementById("videoModal");
+  const videoFrame = document.getElementById("videoFrame");
+
+  // Hide modal
+  modal.classList.remove("active");
+  videoFrame.src = ""; // Clear iframe
+  document.body.style.overflow = "auto"; // Re-enable scrolling
+}
+
+// Close modal when clicking outside the content
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("videoModal");
+  if (modal) {
+    modal.addEventListener("click", function (e) {
+      if (e.target === modal) {
+        closeVideoModal();
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeVideoModal();
+      }
+    });
+  }
+});
+
+/* ========================================
+   Booking System - Service Categories
+   ======================================== */
+
+const serviceCategories = {
+  bestratingswerk: [
+    { value: "grondwerk", label: "Grondwerk" },
+    { value: "straattuin", label: "Straattuin" },
+    { value: "bestrating", label: "Bestrating" },
+    { value: "opritten", label: "Opritten" },
+    { value: "terrassen", label: "Terrassen" },
+    { value: "paden", label: "Paden" },
+    { value: "anders-bestrating", label: "Anders" },
+  ],
+  hovenierswerk: [
+    { value: "tuinontwerp", label: "Tuinontwerp" },
+    { value: "tuinonderhoud", label: "Tuinonderhoud" },
+    { value: "siertuin", label: "Siertuin" },
+    { value: "tuinaanleg", label: "Tuinaanleg" },
+    { value: "beplanting", label: "Beplanting" },
+    { value: "onderhoud", label: "Onderhoud" },
+    { value: "anders-hovenierswerk", label: "Anders" },
+  ],
+};
+
+/* ========================================
+   Booking Form Navigation
+   ======================================== */
+
+let currentStep = 1;
+let bookingData = {};
+
+function goToStep(step) {
+  // Validate current step before moving
+  if (!validateStep(currentStep)) {
+    return;
+  }
+
+  // Hide all steps
+  document.querySelectorAll(".form-step").forEach((stepEl) => {
+    stepEl.classList.add("hidden");
+  });
+
+  // Show new step
+  const nextStepEl = document.getElementById(`step-${step}`);
+  if (nextStepEl) {
+    nextStepEl.classList.remove("hidden");
+    currentStep = step;
+
+    // Update service dropdown if main category changed
+    if (step === 2) {
+      updateServiceOptions();
+    }
+
+    // Set minimum date to today
+    if (step === 3) {
+      const dateInput = document.getElementById("bookingDate");
+      const today = new Date().toISOString().split("T")[0];
+      dateInput.min = today;
+    }
+
+    // Scroll to form
+    document.querySelector(".booking-form").scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}
+
+function validateStep(step) {
+  const mainCategory = document.querySelector(
+    'input[name="mainCategory"]:checked',
+  );
+  const serviceType = document.getElementById("serviceType");
+  const bookingDate = document.getElementById("bookingDate");
+  const bookingTime = document.getElementById("bookingTime");
+
+  switch (step) {
+    case 1:
+      if (!mainCategory) {
+        showBookingMessage("Selecteer alstublieft een categorie.", "error");
+        return false;
+      }
+      // Store main category
+      bookingData.mainCategory = mainCategory.value;
+      return true;
+
+    case 2:
+      if (!serviceType.value) {
+        showBookingMessage("Selecteer alstublieft een soort klus.", "error");
+        return false;
+      }
+      bookingData.serviceType = serviceType.value;
+      return true;
+
+    case 3:
+      if (!bookingDate.value || !bookingTime.value) {
+        showBookingMessage("Selecteer alstublieft een datum en tijd.", "error");
+        return false;
+      }
+      bookingData.date = bookingDate.value;
+      bookingData.time = bookingTime.value;
+      return true;
+
+    case 4:
+      const name = document.getElementById("customerName");
+      const phone = document.getElementById("customerPhone");
+      const email = document.getElementById("customerEmail");
+      const location = document.getElementById("customerLocation");
+      const preference = document.getElementById("contactPreference");
+
+      if (!name.value || !phone.value || !email.value || !location.value) {
+        showBookingMessage(
+          "Vul alstublieft alle verplichte contactgegevens in.",
+          "error",
+        );
+        return false;
+      }
+
+      if (!validateEmail(email.value)) {
+        showBookingMessage(
+          "Voer alstublieft een geldig e-mailadres in.",
+          "error",
+        );
+        return false;
+      }
+
+      bookingData.customerName = name.value;
+      bookingData.customerPhone = phone.value;
+      bookingData.customerEmail = email.value;
+      bookingData.customerLocation = location.value;
+      bookingData.customerAddress =
+        document.getElementById("customerAddress").value || "Niet opgegeven";
+      bookingData.contactPreference = preference.value;
+      return true;
+
+    case 5:
+      const description = document.getElementById("klusDescription");
+      if (!description.value) {
+        showBookingMessage(
+          "Geef alstublieft een beschrijving van uw klus.",
+          "error",
+        );
+        return false;
+      }
+      bookingData.description = description.value;
+      bookingData.timestamp = new Date().toISOString();
+      return true;
+
+    default:
+      return true;
+  }
+}
+
+function updateServiceOptions() {
+  const mainCategory = document.querySelector(
+    'input[name="mainCategory"]:checked',
+  ).value;
+  const serviceSelect = document.getElementById("serviceType");
+
+  // Clear existing options
+  serviceSelect.innerHTML =
+    '<option value="">-- Selecteer een klus --</option>';
+
+  // Add category-specific options
+  const services = serviceCategories[mainCategory];
+  services.forEach((service) => {
+    const option = document.createElement("option");
+    option.value = service.value;
+    option.textContent = service.label;
+    serviceSelect.appendChild(option);
+  });
+}
+
+/* ========================================
+   Booking Form Submission
+   ======================================== */
+
+const bookingForm = document.getElementById("bookingForm");
+
+if (bookingForm) {
+  bookingForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Final validation
+    const description = document.getElementById("klusDescription");
+    if (!description.value) {
+      showBookingMessage(
+        "Geef alstublieft een beschrijving van uw klus.",
+        "error",
+      );
+      return;
+    }
+
+    bookingData.description = description.value;
+    bookingData.timestamp = new Date().toISOString();
+
+    // Store booking in localStorage
+    storeBookingData(bookingData);
+
+    // Show success message
+    showBookingMessage(
+      "Bedankt voor uw afspraakaanvraag! Sjoerd neemt binnen 1–2 werkdagen contact met u op.",
+      "success",
+    );
+
+    console.log("Booking data:", bookingData);
+
+    // Reset form
+    bookingForm.reset();
+    document.querySelectorAll(".form-step").forEach((stepEl) => {
+      stepEl.classList.add("hidden");
+    });
+    document.getElementById("step-1").classList.remove("hidden");
+    currentStep = 1;
+
+    // Scroll to message
+    const messageEl = document.getElementById("bookingMessage");
+    messageEl.scrollIntoView({ behavior: "smooth", block: "start" });
+
+    // Reset message after 5 seconds
+    setTimeout(() => {
+      messageEl.style.display = "none";
+    }, 8000);
+  });
+}
+
+/* ========================================
+   Booking Message Display
+   ======================================== */
+
+function showBookingMessage(message, type) {
+  const messageEl = document.getElementById("bookingMessage");
+  messageEl.textContent = message;
+  messageEl.className = `booking-message ${type}`;
+  messageEl.style.display = "block";
+}
+
+/* ========================================
+   Local Storage for Booking Data
+   ======================================== */
+
+function storeBookingData(data) {
+  // Get existing bookings
+  let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+
+  // Add new booking
+  bookings.push(data);
+
+  // Store back
+  localStorage.setItem("bookings", JSON.stringify(bookings));
+
+  console.log("Booking stored:", data);
+  console.log("Total bookings:", bookings.length);
+}
+
+/* ========================================
+   Email Validation
+   ======================================== */
+
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
 
 /* ========================================
    Mobile Navigation Toggle
@@ -17,132 +315,40 @@ document.addEventListener("DOMContentLoaded", initHeroCanvas);
 const navToggle = document.getElementById("navToggle");
 const navMenu = document.getElementById("navMenu");
 
-navToggle.addEventListener("click", () => {
-  navMenu.classList.toggle("active");
-});
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
 
-// Close menu when a link is clicked
-const navLinks = document.querySelectorAll(".nav-link");
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    navMenu.classList.remove("active");
+  // Close menu when a link is clicked
+  const navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+    });
+  });
+}
+
+/* ========================================
+   Smooth Scroll Offset for Sticky Nav
+   ======================================== */
+
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
+    if (href === "#") return;
+
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const offsetTop = target.offsetTop - 80; // Offset for navbar height
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
   });
 });
-
-/* ========================================
-   Form Handling
-   ======================================== */
-
-const requestForm = document.getElementById("requestForm");
-const formMessage = document.getElementById("formMessage");
-
-requestForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  // Get form data
-  const formData = {
-    name: document.getElementById("name").value,
-    phone: document.getElementById("phone").value,
-    email: document.getElementById("email").value,
-    location: document.getElementById("location").value,
-    service: document.getElementById("service").value,
-    description: document.getElementById("description").value,
-    period: document.getElementById("period").value,
-    contact: document.getElementById("contact").value,
-    timestamp: new Date().toISOString(),
-  };
-
-  // Validate form data
-  if (!validateFormData(formData)) {
-    showFormMessage("Vul alstublieft alle verplichte velden in.", "error");
-    return;
-  }
-
-  // Store in localStorage (frontend only for now)
-  storeFormData(formData);
-
-  // Show success message
-  showFormMessage(
-    "Bedankt voor uw aanvraag! Sjoerd neemt binnen 1–2 werkdagen contact met u op.",
-    "success",
-  );
-
-  // Reset form
-  requestForm.reset();
-
-  // Optional: Send to backend/email service
-  // sendFormToBackend(formData);
-
-  // Scroll to message
-  formMessage.scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
-/* ========================================
-   Form Validation
-   ======================================== */
-
-function validateFormData(data) {
-  // Check required fields
-  if (
-    !data.name ||
-    !data.phone ||
-    !data.email ||
-    !data.location ||
-    !data.service ||
-    !data.description ||
-    !data.period ||
-    !data.contact
-  ) {
-    return false;
-  }
-
-  // Validate email
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(data.email)) {
-    return false;
-  }
-
-  // Validate phone (basic validation)
-  const phoneRegex = /^[\d\s\-\+\(\)]+$/;
-  if (!phoneRegex.test(data.phone)) {
-    return false;
-  }
-
-  return true;
-}
-
-/* ========================================
-   Form Message Display
-   ======================================== */
-
-function showFormMessage(message, type) {
-  formMessage.textContent = message;
-  formMessage.className = `form-message ${type}`;
-  formMessage.style.display = "block";
-
-  // Auto-hide after 5 seconds
-  setTimeout(() => {
-    formMessage.style.display = "none";
-  }, 5000);
-}
-
-/* ========================================
-   Local Storage for Form Data
-   ======================================== */
-
-function storeFormData(data) {
-  // Get existing data
-  let submissions = JSON.parse(localStorage.getItem("formSubmissions")) || [];
-
-  // Add new submission
-  submissions.push(data);
-
-  // Store back
-  localStorage.setItem("formSubmissions", JSON.stringify(submissions));
-
-  console.log("Form submission stored:", data);
-  console.log("Total submissions:", submissions.length);
-}
 
 /* ========================================
    Backend Integration (Optional)

@@ -7,8 +7,10 @@
     <title>Vdveen - Hovenier & Bestrating</title>
     <link rel="stylesheet" href="style.css">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Tangerine:wght@400;700&display=swap"
         rel="stylesheet">
+    <!-- TikTok Embed Script -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
 </head>
 
 <body>
@@ -31,7 +33,7 @@
                 <li><a href="#services" class="nav-link">Werkzaamheden</a></li>
                 <li><a href="#portfolio" class="nav-link">Projecten</a></li>
                 <li><a href="#videos" class="nav-link">TikTok</a></li>
-                <li><a href="#request" class="nav-link">Aanvraag</a></li>
+                <li><a href="#booking" class="nav-link">Afspraak</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li>
                     <a href="https://wa.me/31645570389?text=Hallo%20Vdveen%2C%20ik%20ben%20geïnteresseerd%20in%20uw%20diensten"
@@ -43,13 +45,20 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="12056259_3840_2160_24fps.mp4" type="video/mp4">
+            Je browser ondersteunt video niet.
+        </video>
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Vakwerk dat spreekt</h1>
-            <p class="hero-subtitle">Bestrating, tuinaanleg en hovenierswerk op het hoogste niveau. Van idee naar
-                perfect resultaat.</p>
+            <div class="hero-accent-top">Vakwerk buiten</div>
+            <h1 class="hero-title">Luxe buitenruimtes, strak aangelegd</h1>
+            <p class="hero-subtitle">Van sierbestrating tot complete tuinaanleg: Sjoerd helpt klanten met buitenruimtes
+                die netjes, praktisch en duurzaam worden aangelegd.</p>
             <div class="hero-buttons">
-                <a href="tel:+31600000000" class="btn btn-primary btn-large-hero">Bel direct</a>
-                <a href="https://wa.me/31600000000?text=Hallo%20Sjoerd%2C%20ik%20ben%20geïnteresseerd%20in%20uw%20diensten"
+                <a href="#booking" class="btn btn-primary btn-large-hero">Plan een afspraak</a>
+                <a href="#portfolio" class="btn btn-secondary btn-large-hero">Bekijk projecten</a>
+                <a href="https://wa.me/31645570389?text=Hallo%20Sjoerd%2C%20ik%20ben%20geïnteresseerd%20in%20uw%20diensten"
                     target="_blank" class="btn btn-secondary btn-large-hero">WhatsApp</a>
             </div>
         </div>
@@ -59,49 +68,99 @@
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Werkzaamheden</h2>
-            <p class="section-subtitle">Wat Sjoerd voor u kan doen</p>
+            <p class="section-subtitle">Sjoerd van der Veen helpt met strak bestratingswerk en verzorgd hovenierswerk
+            </p>
+
+            <!-- Bestratingswerk Category -->
+            <div class="category-header">
+                <h3 class="category-title">Bestratingswerk</h3>
+                <p class="category-description">Voor strak, duurzaam en netjes afgewerkt straatwerk rondom woning, tuin,
+                    oprit of terras.</p>
+            </div>
 
             <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">◆</div>
+                <div class="service-card bestratingswerk-card">
+                    <div class="service-icon">⬇</div>
+                    <h3>Grondwerk</h3>
+                    <p>Een sterke basis voor iedere buitenruimte. Denk aan uitgraven, egaliseren en voorbereiden van de
+                        ondergrond.</p>
+                </div>
+
+                <div class="service-card bestratingswerk-card">
+                    <div class="service-icon">🌱</div>
+                    <h3>Straattuin</h3>
+                    <p>Een combinatie van straatwerk en groen, waarbij bestrating en tuin slim op elkaar aansluiten.</p>
+                </div>
+
+                <div class="service-card bestratingswerk-card">
+                    <div class="service-icon">🪨</div>
                     <h3>Bestrating</h3>
                     <p>Vakkundig aanleggen van betonstraten, grindpaden en keien. Duurzaam en netjes afgewerkt.</p>
                 </div>
 
-                <div class="service-card">
-                    <div class="service-icon">🌿</div>
-                    <h3>Tuinaanleg</h3>
-                    <p>Complete tuinontwerp en aanleg, van grondwerk tot afwerking. Uw wensen worden werkelijkheid.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">✂</div>
-                    <h3>Hovenierswerk</h3>
-                    <p>Professionele tuinonderhoud, snoeien en plantwerk. Uw tuin het hele jaar mooi.</p>
-                </div>
-
-                <div class="service-card">
-                    <div class="service-icon">↔</div>
+                <div class="service-card bestratingswerk-card">
+                    <div class="service-icon">🛣</div>
                     <h3>Opritten</h3>
                     <p>Sterke, duurzame opritten voor uw inrit. Functioneel en netjes aangelegd.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card bestratingswerk-card">
                     <div class="service-icon">☕</div>
                     <h3>Terrassen</h3>
                     <p>Gezellige terrassen voor uw tuin. Professioneel aangelegd en afgewerkt.</p>
                 </div>
 
-                <div class="service-card">
+                <div class="service-card bestratingswerk-card">
                     <div class="service-icon">🛤</div>
                     <h3>Paden</h3>
                     <p>Functionele paden door uw tuin of bedrijfsterrein. Mooi en praktisch.</p>
                 </div>
+            </div>
 
-                <div class="service-card">
+            <!-- Hovenierswerk Category -->
+            <div class="category-header">
+                <h3 class="category-title">Hovenierswerk</h3>
+                <p class="category-description">Voor een verzorgde, praktische en sfeervolle buitenruimte met oog voor
+                    groen, indeling en afwerking.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card hovenierswerk-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Tuinontwerp</h3>
+                    <p>Van idee naar praktisch tuinplan. Sjoerd denkt mee over indeling, uitstraling en gebruik van de
+                        tuin.</p>
+                </div>
+
+                <div class="service-card hovenierswerk-card">
+                    <div class="service-icon">✂️</div>
+                    <h3>Tuinonderhoud</h3>
+                    <p>Voor een verzorgde tuin door het jaar heen. Denk aan snoeien, onderhoud, opruimen en netjes
+                        houden.</p>
+                </div>
+
+                <div class="service-card hovenierswerk-card">
+                    <div class="service-icon">🌳</div>
+                    <h3>Siertuin</h3>
+                    <p>Een nette en sfeervolle tuin met oog voor uitstraling, beplanting en afwerking.</p>
+                </div>
+
+                <div class="service-card hovenierswerk-card">
+                    <div class="service-icon">🌿</div>
+                    <h3>Tuinaanleg</h3>
+                    <p>Complete tuinontwerp en aanleg, van grondwerk tot afwerking. Uw wensen worden werkelijkheid.</p>
+                </div>
+
+                <div class="service-card hovenierswerk-card">
+                    <div class="service-icon">🌸</div>
+                    <h3>Beplanting</h3>
+                    <p>Professionele beplanting en plantwerk. De juiste plant op de juiste plek voor een mooie tuin.</p>
+                </div>
+
+                <div class="service-card hovenierswerk-card">
                     <div class="service-icon">🔧</div>
-                    <h3>Onderhoud & Herstel</h3>
-                    <p>Herstel en onderhoud van bestaande tuinen en terrassen. Vakkundig en netjes.</p>
+                    <h3>Onderhoud</h3>
+                    <p>Herstel en onderhoud van bestaande tuinen en buitenruimtes. Vakkundig en netjes.</p>
                 </div>
             </div>
         </div>
@@ -193,135 +252,225 @@
             <p class="section-subtitle">Volg zijn werk op TikTok</p>
 
             <div class="videos-grid">
-                <!-- Video Placeholder 1 -->
-                <div class="video-card">
-                    <div class="video-placeholder">
-                        <svg viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="300" height="350" fill="#f0f0f0" />
-                            <circle cx="150" cy="175" r="40" fill="#999" opacity="0.3" />
-                            <polygon points="140,160 140,190 165,175" fill="#666" />
-                            <text x="150" y="280" font-size="14" text-anchor="middle" fill="#999" font-family="Inter">
-                                TikTok Video
-                            </text>
-                        </svg>
+                <!-- Video 1 -->
+                <div class="video-card" data-video-id="7640107839909842209">
+                    <div class="video-thumbnail" onclick="openVideoModal('7640107839909842209')">
+                        <div class="video-background">
+                            <svg viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="300" height="350" fill="#000000" />
+                                <circle cx="150" cy="175" r="50" fill="#25F4EE" opacity="0.08" />
+                                <circle cx="150" cy="175" r="40" fill="#25F4EE" opacity="0.12" />
+                            </svg>
+                        </div>
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="11" stroke="#25F4EE" stroke-width="2" />
+                                <path d="M9.5 7.5v9l6-4.5-6-4.5z" fill="#25F4EE" />
+                            </svg>
+                        </div>
+                        <span class="tiktok-badge">TikTok</span>
                     </div>
                     <p class="video-duration">Bestrating in actie</p>
                 </div>
 
-                <!-- Video Placeholder 2 -->
-                <div class="video-card">
-                    <div class="video-placeholder">
-                        <svg viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="300" height="350" fill="#f0f0f0" />
-                            <circle cx="150" cy="175" r="40" fill="#999" opacity="0.3" />
-                            <polygon points="140,160 140,190 165,175" fill="#666" />
-                            <text x="150" y="280" font-size="14" text-anchor="middle" fill="#999" font-family="Inter">
-                                TikTok Video
-                            </text>
-                        </svg>
+                <!-- Video 2 -->
+                <div class="video-card" data-video-id="7611569150414032160">
+                    <div class="video-thumbnail" onclick="openVideoModal('7611569150414032160')">
+                        <div class="video-background">
+                            <svg viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="300" height="350" fill="#000000" />
+                                <circle cx="150" cy="175" r="50" fill="#25F4EE" opacity="0.08" />
+                                <circle cx="150" cy="175" r="40" fill="#25F4EE" opacity="0.12" />
+                            </svg>
+                        </div>
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="11" stroke="#25F4EE" stroke-width="2" />
+                                <path d="M9.5 7.5v9l6-4.5-6-4.5z" fill="#25F4EE" />
+                            </svg>
+                        </div>
+                        <span class="tiktok-badge">TikTok</span>
                     </div>
                     <p class="video-duration">Tuinwerk in volle gang</p>
                 </div>
 
-                <!-- Video Placeholder 3 -->
-                <div class="video-card">
-                    <div class="video-placeholder">
-                        <svg viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="300" height="350" fill="#f0f0f0" />
-                            <circle cx="150" cy="175" r="40" fill="#999" opacity="0.3" />
-                            <polygon points="140,160 140,190 165,175" fill="#666" />
-                            <text x="150" y="280" font-size="14" text-anchor="middle" fill="#999" font-family="Inter">
-                                TikTok Video
-                            </text>
-                        </svg>
+                <!-- Video 3 -->
+                <div class="video-card" data-video-id="7640107839909842209">
+                    <div class="video-thumbnail" onclick="openVideoModal('7640107839909842209')">
+                        <div class="video-background">
+                            <svg viewBox="0 0 300 350" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="300" height="350" fill="#000000" />
+                                <circle cx="150" cy="175" r="50" fill="#25F4EE" opacity="0.08" />
+                                <circle cx="150" cy="175" r="40" fill="#25F4EE" opacity="0.12" />
+                            </svg>
+                        </div>
+                        <div class="play-button">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="11" stroke="#25F4EE" stroke-width="2" />
+                                <path d="M9.5 7.5v9l6-4.5-6-4.5z" fill="#25F4EE" />
+                            </svg>
+                        </div>
+                        <span class="tiktok-badge">TikTok</span>
                     </div>
                     <p class="video-duration">Het eindresultaat</p>
                 </div>
             </div>
 
+            <!-- Video Modal -->
+            <div id="videoModal" class="video-modal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeVideoModal()">&times;</button>
+                    <div class="modal-video-container">
+                        <iframe id="videoFrame" src="" frameborder="0" allow="autoplay; encrypted-media"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
             <div class="videos-cta">
-                <a href="https://www.tiktok.com" target="_blank" class="btn btn-secondary">
-                    Volg op TikTok
+                <a href="https://www.tiktok.com/@vdveenbestrating" target="_blank" class="btn btn-secondary">
+                    Volg Sjoerd op TikTok
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Request Form Section -->
-    <section class="request-form" id="request">
+    <!-- Booking Section -->
+    <section class="booking-section" id="booking">
         <div class="container">
-            <h2 class="section-title">Uw klusje doorgeven</h2>
-            <p class="section-subtitle">Vul hieronder in wat u wilt laten doen</p>
+            <h2 class="section-title">Plan uw afspraak</h2>
+            <p class="section-subtitle">Kies een moment dat past en laat Sjoerd van uw wensen weten</p>
 
-            <form class="form" id="requestForm">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="name">Naam *</label>
-                        <input type="text" id="name" name="name" required>
+            <div class="booking-form-wrapper">
+                <form class="booking-form" id="bookingForm">
+                    <!-- Step 1: Main Category -->
+                    <div class="form-step" id="step-1">
+                        <div class="step-header">
+                            <h3>Stap 1: Type werkzaamheden</h3>
+                        </div>
+                        <div class="form-group category-select">
+                            <label>Wat wilt u laten doen? *</label>
+                            <div class="radio-group">
+                                <label class="radio-label">
+                                    <input type="radio" name="mainCategory" value="bestratingswerk" required>
+                                    <span class="radio-text">Bestratingswerk</span>
+                                </label>
+                                <label class="radio-label">
+                                    <input type="radio" name="mainCategory" value="hovenierswerk" required>
+                                    <span class="radio-text">Hovenierswerk</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="goToStep(2)">Volgende</button>
                     </div>
 
-                    <div class="form-group">
-                        <label for="phone">Telefoonnummer *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                    <!-- Step 2: Specific Service -->
+                    <div class="form-step hidden" id="step-2">
+                        <div class="step-header">
+                            <h3>Stap 2: Soort klus</h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType">Welke klus is het? *</label>
+                            <select id="serviceType" name="serviceType" required>
+                                <option value="">-- Selecteer een klus --</option>
+                            </select>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-secondary" onclick="goToStep(1)">Vorige</button>
+                            <button type="button" class="btn btn-primary" onclick="goToStep(3)">Volgende</button>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="email">E-mailadres *</label>
-                        <input type="email" id="email" name="email" required>
+                    <!-- Step 3: Date & Time -->
+                    <div class="form-step hidden" id="step-3">
+                        <div class="step-header">
+                            <h3>Stap 3: Datum en tijd</h3>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="bookingDate">Kies een datum *</label>
+                                <input type="date" id="bookingDate" name="bookingDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="bookingTime">Kies een tijd *</label>
+                                <select id="bookingTime" name="bookingTime" required>
+                                    <option value="">-- Selecteer tijd --</option>
+                                    <option value="09:00">09:00</option>
+                                    <option value="10:30">10:30</option>
+                                    <option value="13:00">13:00</option>
+                                    <option value="14:30">14:30</option>
+                                    <option value="16:00">16:00</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-secondary" onclick="goToStep(2)">Vorige</button>
+                            <button type="button" class="btn btn-primary" onclick="goToStep(4)">Volgende</button>
+                        </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="location">Woonplaats *</label>
-                        <input type="text" id="location" name="location" required>
+                    <!-- Step 4: Contact Details -->
+                    <div class="form-step hidden" id="step-4">
+                        <div class="step-header">
+                            <h3>Stap 4: Uw contactgegevens</h3>
+                        </div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="customerName">Naam *</label>
+                                <input type="text" id="customerName" name="customerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerPhone">Telefoonnummer *</label>
+                                <input type="tel" id="customerPhone" name="customerPhone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerEmail">E-mailadres *</label>
+                                <input type="email" id="customerEmail" name="customerEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerLocation">Woonplaats *</label>
+                                <input type="text" id="customerLocation" name="customerLocation" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerAddress">Adres (optioneel)</label>
+                                <input type="text" id="customerAddress" name="customerAddress"
+                                    placeholder="Hoofdstraat 1, Amsterdam">
+                            </div>
+                            <div class="form-group">
+                                <label for="contactPreference">Voorkeur contact *</label>
+                                <select id="contactPreference" name="contactPreference" required>
+                                    <option value="">-- Selecteer voorkeur --</option>
+                                    <option value="phone">Bellen</option>
+                                    <option value="whatsapp">WhatsApp</option>
+                                    <option value="email">E-mail</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-secondary" onclick="goToStep(3)">Vorige</button>
+                            <button type="button" class="btn btn-primary" onclick="goToStep(5)">Volgende</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="service">Type klus *</label>
-                    <select id="service" name="service" required>
-                        <option value="">-- Selecteer een klus --</option>
-                        <option value="bestrating">Bestrating</option>
-                        <option value="tuinaanleg">Tuinaanleg</option>
-                        <option value="hovenierswerk">Hovenierswerk</option>
-                        <option value="oprit-terras">Oprit / Terras</option>
-                        <option value="onderhoud">Onderhoud</option>
-                        <option value="anders">Anders</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="description">Korte uitleg van uw klus *</label>
-                    <textarea id="description" name="description" rows="5"
-                        placeholder="Beschrijf wat u wilt laten doen..." required></textarea>
-                </div>
-
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="period">Gewenste periode *</label>
-                        <select id="period" name="period" required>
-                            <option value="">-- Selecteer periode --</option>
-                            <option value="asap">Zo snel mogelijk</option>
-                            <option value="week">Deze week</option>
-                            <option value="month">Deze maand</option>
-                            <option value="flexible">Flexibel</option>
-                        </select>
+                    <!-- Step 5: Description -->
+                    <div class="form-step hidden" id="step-5">
+                        <div class="step-header">
+                            <h3>Stap 5: Beschrijving van uw klus</h3>
+                        </div>
+                        <div class="form-group">
+                            <label for="klusDescription">Korte omschrijving *</label>
+                            <textarea id="klusDescription" name="klusDescription" rows="6"
+                                placeholder="Beschrijf wat u wilt laten doen..." required></textarea>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-secondary" onclick="goToStep(4)">Vorige</button>
+                            <button type="submit" class="btn btn-primary">Afspraak aanvragen</button>
+                        </div>
                     </div>
+                </form>
 
-                    <div class="form-group">
-                        <label for="contact">Voorkeur contact *</label>
-                        <select id="contact" name="contact" required>
-                            <option value="">-- Selecteer voorkeur --</option>
-                            <option value="phone">Bellen</option>
-                            <option value="whatsapp">WhatsApp</option>
-                            <option value="email">E-mail</option>
-                        </select>
-                    </div>
-                </div>
-
-                <button type="submit" class="btn btn-primary btn-large">Stuur aanvraag</button>
-            </form>
-
-            <div class="form-message" id="formMessage" style="display: none;"></div>
+                <div class="booking-message" id="bookingMessage" style="display: none;"></div>
+            </div>
         </div>
     </section>
 
@@ -400,6 +549,48 @@
 
     <script src="config.js"></script>
     <script src="script.js"></script>
+
+    <!-- Video Modal Inline Functions -->
+    <script>
+        function openVideoModal(videoId) {
+            const modal = document.getElementById("videoModal");
+            const videoFrame = document.getElementById("videoFrame");
+            if (modal && videoFrame) {
+                videoFrame.src = `https://www.tiktok.com/embed/v2/${videoId}`;
+                modal.classList.add("active");
+                document.body.style.overflow = "hidden";
+            }
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById("videoModal");
+            const videoFrame = document.getElementById("videoFrame");
+            if (modal && videoFrame) {
+                modal.classList.remove("active");
+                videoFrame.src = "";
+                document.body.style.overflow = "auto";
+            }
+        }
+
+        // Setup modal event listeners
+        document.addEventListener("DOMContentLoaded", function () {
+            const modal = document.getElementById("videoModal");
+            if (modal) {
+                modal.addEventListener("click", function (e) {
+                    if (e.target === modal) {
+                        closeVideoModal();
+                    }
+                });
+            }
+        });
+
+        // Close on Escape key
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") {
+                closeVideoModal();
+            }
+        });
+    </script>
 </body>
 
 </html>
