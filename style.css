@@ -1391,8 +1391,8 @@ p {
   min-width: 180px;
 }
 
-.booking-form > .btn {
-  margin-top: var(--spacing-lg);
+.form-step > .btn {
+  margin-top: calc(var(--spacing-xl) + 0.5rem);
 }
 
 .booking-message {
