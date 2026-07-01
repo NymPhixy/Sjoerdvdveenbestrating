@@ -9,20 +9,22 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Tangerine:wght@400;700&display=swap"
         rel="stylesheet">
-    <!-- TikTok Embed Script -->
     <script async src="https://www.tiktok.com/embed.js"></script>
 </head>
 
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-primary">Vdveen</span>
-                <span class="logo-secondary">Hovenier & Bestrating</span>
-            </div>
+            <a class="nav-logo" href="#home" aria-label="Ga naar de homepagina">
+                <img class="nav-logo-image" src="assets/logo/Sjoerd-vd-veen-bestrating-scaleded.jpg"
+                    alt="Sjoerd vd Veen Bestrating logo">
+                <div class="nav-logo-text">
+                    <span class="logo-primary">Vdveen</span>
+                    <span class="logo-secondary">Hovenier & Bestrating</span>
+                </div>
+            </a>
 
-            <button class="nav-toggle" id="navToggle">
+            <button class="nav-toggle" id="navToggle" aria-label="Menu openen">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -43,7 +45,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <video class="hero-video" autoplay muted loop playsinline>
             <source src="compressedvideo.mp4" type="video/mp4">
@@ -64,14 +65,12 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
             <h2 class="section-title">Werkzaamheden</h2>
             <p class="section-subtitle">Sjoerd van der Veen helpt met strak bestratingswerk en verzorgd hovenierswerk
             </p>
 
-            <!-- Bestratingswerk Category -->
             <div class="category-header">
                 <h3 class="category-title">Bestratingswerk</h3>
                 <p class="category-description">Voor strak, duurzaam en netjes afgewerkt straatwerk rondom woning, tuin,
@@ -117,7 +116,6 @@
                 </div>
             </div>
 
-            <!-- Hovenierswerk Category -->
             <div class="category-header">
                 <h3 class="category-title">Hovenierswerk</h3>
                 <p class="category-description">Voor een verzorgde, praktische en sfeervolle buitenruimte met oog voor
@@ -166,93 +164,94 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="container">
-            <h2 class="section-title">Projecten</h2>
-            <p class="section-subtitle">Afgeronde projecten van Sjoerd</p>
+            <h2 class="section-title">Uitgelichte projecten</h2>
+            <p class="section-subtitle">Een selectie uit de foto’s van recent bestrating- en hovenierswerk</p>
 
             <div class="portfolio-grid">
-                <!-- Project 1 -->
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="300" height="250" fill="#e8e4da" />
-                            <text x="150" y="115" font-size="16" text-anchor="middle" fill="#999" font-family="Inter">
-                                Projectfoto
-                            </text>
-                        </svg>
+                        <img src="assets/foto/WhatsApp%20Image%202026-05-18%20at%2020.55.19.jpeg"
+                            alt="Strak afgewerkt terras met grote tegels" loading="lazy">
                     </div>
                     <div class="portfolio-info">
                         <span class="portfolio-category">Bestrating</span>
-                        <h3>Nieuwe oprit in Groningen</h3>
-                        <p>Vakkundig aanleggen van een moderne oprit met betonklinkers. Rechte lijnen en professionele
-                            afwerking.</p>
+                        <h3>Strak terras met patroonwerk</h3>
+                        <p>Rustige lijnen, nette voegen en een luxe afwerking die direct bij de woning aansluit.</p>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="300" height="250" fill="#dfe5d9" />
-                            <text x="150" y="115" font-size="16" text-anchor="middle" fill="#999" font-family="Inter">
-                                Projectfoto
-                            </text>
-                        </svg>
+                        <img src="assets/foto/WhatsApp%20Image%202026-05-18%20at%2020.56.06.jpeg"
+                            alt="Bestrate buitenruimte in aanbouw" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Bestrating</span>
+                        <h3>Klassiek straatwerk</h3>
+                        <p>Stevige basis, strak gelegd en voorbereid op jarenlang gebruik zonder drukke uitstraling.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="assets/foto/WhatsApp%20Image%202026-05-18%20at%2020.55.54.jpeg"
+                            alt="Afgewerkt buitenproject met rustige uitstraling" loading="lazy">
                     </div>
                     <div class="portfolio-info">
                         <span class="portfolio-category">Tuinwerk</span>
-                        <h3>Complete tuinaanleg</h3>
-                        <p>Volledige tuinontwerp en aanleg met paden, beplanting en terras. Een groene oase.</p>
+                        <h3>Rondom de woning</h3>
+                        <p>Een nette afwerking die de woning rustiger laat ogen en de buitenruimte meer samenhang geeft.
+                        </p>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
                 <div class="portfolio-card">
                     <div class="portfolio-image">
-                        <svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="300" height="250" fill="#e4e1d9" />
-                            <text x="150" y="115" font-size="16" text-anchor="middle" fill="#999" font-family="Inter">
-                                Projectfoto
-                            </text>
-                        </svg>
-                    </div>
-                    <div class="portfolio-info">
-                        <span class="portfolio-category">Terras</span>
-                        <h3>Terras en paden</h3>
-                        <p>Mooi terras aangelegd met daaromheen functionele tuinpaden. Perfekte samenhang.</p>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="300" height="250" fill="#e1e0d8" />
-                            <text x="150" y="115" font-size="16" text-anchor="middle" fill="#999" font-family="Inter">
-                                Projectfoto
-                            </text>
-                        </svg>
+                        <img src="assets/foto/WhatsApp%20Image%202026-05-18%20at%2020.55.58.jpeg"
+                            alt="Strakke bestrating met speels detail" loading="lazy">
                     </div>
                     <div class="portfolio-info">
                         <span class="portfolio-category">Bestrating</span>
-                        <h3>Bedrijfsterrein</h3>
-                        <p>Professionele bestrating voor bedrijfsterrein. Sterke constructie en vakkundig afgewerkt.</p>
+                        <h3>Detail in bestrating</h3>
+                        <p>Rustig patroonwerk en een afwerking die het geheel een exclusievere uitstraling geeft.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="assets/foto/WhatsApp%20Image%202026-05-18%20at%2020.56.10.jpeg"
+                            alt="Project met bestrating en nette werkomgeving" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Afwerking</span>
+                        <h3>Strakke eindfase</h3>
+                        <p>Een verzorgd eindresultaat waarin techniek, afschot en uitstraling netjes samenkomen.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="assets/foto/WhatsApp%20Image%202026-05-18%20at%2020.56.12.jpeg"
+                            alt="Werk in uitvoering met luxe bestratingsafwerking" loading="lazy">
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">Buitenruimte</span>
+                        <h3>Luxe rust in de tuin</h3>
+                        <p>Een sobere, verzorgde basis die de buitenruimte rust en kwaliteit meegeeft.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Videos Section -->
     <section class="videos" id="videos">
         <div class="container">
             <h2 class="section-title">Bekijk Sjoerd aan het werk</h2>
             <p class="section-subtitle">Volg zijn werk op TikTok</p>
 
             <div class="videos-grid">
-                <!-- Video 1 -->
                 <div class="video-card" data-video-id="7640107839909842209">
                     <div class="video-thumbnail" onclick="openVideoModal('7640107839909842209')">
                         <div class="video-background">
@@ -273,7 +272,6 @@
                     <p class="video-duration">Bestrating in actie</p>
                 </div>
 
-                <!-- Video 2 -->
                 <div class="video-card" data-video-id="7611569150414032160">
                     <div class="video-thumbnail" onclick="openVideoModal('7611569150414032160')">
                         <div class="video-background">
@@ -294,7 +292,6 @@
                     <p class="video-duration">Tuinwerk in volle gang</p>
                 </div>
 
-                <!-- Video 3 -->
                 <div class="video-card" data-video-id="7640107839909842209">
                     <div class="video-thumbnail" onclick="openVideoModal('7640107839909842209')">
                         <div class="video-background">
@@ -316,7 +313,6 @@
                 </div>
             </div>
 
-            <!-- Video Modal -->
             <div id="videoModal" class="video-modal">
                 <div class="modal-content">
                     <button class="modal-close" onclick="closeVideoModal()">&times;</button>
@@ -328,14 +324,12 @@
             </div>
 
             <div class="videos-cta">
-                <a href="https://www.tiktok.com/@vdveenbestrating" target="_blank" class="btn btn-secondary">
-                    Volg Sjoerd op TikTok
-                </a>
+                <a href="https://www.tiktok.com/@vdveenbestrating" target="_blank" class="btn btn-secondary">Volg Sjoerd
+                    op TikTok</a>
             </div>
         </div>
     </section>
 
-    <!-- Booking Section -->
     <section class="booking-section" id="booking">
         <div class="container">
             <h2 class="section-title">Plan uw afspraak</h2>
@@ -343,13 +337,12 @@
 
             <div class="booking-form-wrapper">
                 <form class="booking-form" id="bookingForm">
-                    <!-- Step 1: Main Category -->
                     <div class="form-step" id="step-1">
                         <div class="step-header">
                             <h3>Stap 1: Type werkzaamheden</h3>
                         </div>
                         <div class="form-group category-select">
-                            <label>Wat wilt u laten doen? *</label>
+                            <p class="form-question">Wat wilt u laten doen? *</p>
                             <div class="radio-group">
                                 <label class="radio-label">
                                     <input type="radio" name="mainCategory" value="bestratingswerk" required>
@@ -364,7 +357,6 @@
                         <button type="button" class="btn btn-primary" onclick="goToStep(2)">Volgende</button>
                     </div>
 
-                    <!-- Step 2: Specific Service -->
                     <div class="form-step hidden" id="step-2">
                         <div class="step-header">
                             <h3>Stap 2: Soort klus</h3>
@@ -381,7 +373,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 3: Date & Time -->
                     <div class="form-step hidden" id="step-3">
                         <div class="step-header">
                             <h3>Stap 3: Datum en tijd</h3>
@@ -409,7 +400,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 4: Contact Details -->
                     <div class="form-step hidden" id="step-4">
                         <div class="step-header">
                             <h3>Stap 4: Uw contactgegevens</h3>
@@ -452,7 +442,6 @@
                         </div>
                     </div>
 
-                    <!-- Step 5: Description -->
                     <div class="form-step hidden" id="step-5">
                         <div class="step-header">
                             <h3>Stap 5: Beschrijving van uw klus</h3>
@@ -474,7 +463,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Rechtstreeks contact</h2>
@@ -483,18 +471,19 @@
             <div class="contact-grid">
                 <div class="contact-item">
                     <h3>Telefonisch</h3>
-                    <a href="tel:+31600000000" class="contact-link">+31 (0)6 0000 0000</a>
+                    <a href="tel:+31645570389" class="contact-link">+31 (0)6 4557 0389</a>
                 </div>
 
                 <div class="contact-item">
                     <h3>WhatsApp</h3>
-                    <a href="https://wa.me/31600000000?text=Hallo%20Sjoerd%2C%20ik%20ben%20geïnteresseerd%20in%20uw%20diensten"
+                    <a href="https://wa.me/31645570389?text=Hallo%20Sjoerd%2C%20ik%20ben%20geïnteresseerd%20in%20uw%20diensten"
                         target="_blank" class="contact-link">Chat op WhatsApp</a>
                 </div>
 
                 <div class="contact-item">
                     <h3>TikTok</h3>
-                    <a href="https://www.tiktok.com" target="_blank" class="contact-link">Volg op TikTok</a>
+                    <a href="https://www.tiktok.com/@vdveenbestrating" target="_blank" class="contact-link">Volg op
+                        TikTok</a>
                 </div>
 
                 <div class="contact-item">
@@ -504,18 +493,13 @@
             </div>
 
             <div class="contact-cta">
-                <a href="https://wa.me/31600000000?text=Hallo%20Sjoerd%2C%20ik%20ben%20geïnteresseerd%20in%20uw%20diensten"
-                    target="_blank" class="btn btn-primary">
-                    Stuur WhatsApp
-                </a>
-                <a href="tel:+31600000000" class="btn btn-secondary">
-                    Bel nu
-                </a>
+                <a href="https://wa.me/31645570389?text=Hallo%20Sjoerd%2C%20ik%20ben%20geïnteresseerd%20in%20uw%20diensten"
+                    target="_blank" class="btn btn-primary">Stuur WhatsApp</a>
+                <a href="tel:+31645570389" class="btn btn-secondary">Bel nu</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -529,15 +513,15 @@
                     <ul>
                         <li><a href="#services">Werkzaamheden</a></li>
                         <li><a href="#portfolio">Projecten</a></li>
-                        <li><a href="#request">Aanvraag</a></li>
+                        <li><a href="#booking">Aanvraag</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p><a href="tel:+31600000000">+31 (0)6 0000 0000</a></p>
-                    <p><a href="https://wa.me/31600000000" target="_blank">WhatsApp</a></p>
+                    <p><a href="tel:+31645570389">+31 (0)6 4557 0389</a></p>
+                    <p><a href="https://wa.me/31645570389" target="_blank">WhatsApp</a></p>
                 </div>
             </div>
 
@@ -549,48 +533,6 @@
 
     <script src="config.js"></script>
     <script src="script.js"></script>
-
-    <!-- Video Modal Inline Functions -->
-    <script>
-        function openVideoModal(videoId) {
-            const modal = document.getElementById("videoModal");
-            const videoFrame = document.getElementById("videoFrame");
-            if (modal && videoFrame) {
-                videoFrame.src = `https://www.tiktok.com/embed/v2/${videoId}`;
-                modal.classList.add("active");
-                document.body.style.overflow = "hidden";
-            }
-        }
-
-        function closeVideoModal() {
-            const modal = document.getElementById("videoModal");
-            const videoFrame = document.getElementById("videoFrame");
-            if (modal && videoFrame) {
-                modal.classList.remove("active");
-                videoFrame.src = "";
-                document.body.style.overflow = "auto";
-            }
-        }
-
-        // Setup modal event listeners
-        document.addEventListener("DOMContentLoaded", function () {
-            const modal = document.getElementById("videoModal");
-            if (modal) {
-                modal.addEventListener("click", function (e) {
-                    if (e.target === modal) {
-                        closeVideoModal();
-                    }
-                });
-            }
-        });
-
-        // Close on Escape key
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "Escape") {
-                closeVideoModal();
-            }
-        });
-    </script>
 </body>
 
 </html>
